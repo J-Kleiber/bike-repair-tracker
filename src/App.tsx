@@ -1,5 +1,8 @@
 // import './App.css'
 
+import AddRepairForm from "./features/repairs/componets/AddRepairForm";
+import RepairList from "./features/repairs/componets/RepairList";
+
  export default function App() {
   return (
    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex items-center justify-center">
@@ -10,10 +13,14 @@
         <p className="text-lg mb-6">
           Track parts, costs, and kilometers until next replacement
         </p>
-        <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+{/*         <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
           Add First Repair
-        </button>
+        </button> */}
+
+        <AddRepairForm/>
+        <RepairList/>
       </div>
     </div>
   );
 }
+ 
