@@ -1,9 +1,9 @@
 // src/features/repairs/components/RepairList.tsx
-import { useRepairContext } from '../RepairContext';
+import { useRepairContext } from "../RepairContext";
 
 export default function RepairList() {
-    // object desctruction, its just same as const ctx = useRepairContext(); -> const r = ctx.repairs
-  const { repairs } = useRepairContext(); 
+  // object desctruction, its just same as const ctx = useRepairContext(); -> const r = ctx.repairs
+  const { repairs } = useRepairContext();
 
   if (repairs.length === 0) {
     return (
@@ -24,23 +24,38 @@ export default function RepairList() {
         <table className="min-w-full bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
           <thead className="bg-gray-50 dark:bg-gray-700">
             <tr>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+              <th
+                scope="col"
+                className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+              >
                 Part
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+              <th
+                scope="col"
+                className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+              >
                 Cost (€)
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+              <th
+                scope="col"
+                className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+              >
                 KM at Install
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+              <th
+                scope="col"
+                className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+              >
                 Added
               </th>
             </tr>
           </thead>
           <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
             {repairs.map((repair) => (
-              <tr key={repair.id} className="hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+              <tr
+                key={repair.id}
+                className="hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+              >
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-100">
                   {repair.partname}
                 </td>
@@ -53,7 +68,7 @@ export default function RepairList() {
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                   {repair.dateAdded
                     ? new Date(repair.dateAdded).toLocaleDateString()
-                    : '—'}
+                    : "—"}
                 </td>
               </tr>
             ))}

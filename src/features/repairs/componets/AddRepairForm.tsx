@@ -1,22 +1,22 @@
 // src/features/repairs/components/AddRepairForm.tsx
-import { useState } from 'react';
-import { useRepairContext } from '../RepairContext';
+import { useState } from "react";
+import { useRepairContext } from "../RepairContext";
 
 export default function AddRepairForm() {
   // We get the addRepair function from context
   const { addRepair } = useRepairContext();
 
   // Local form state (controlled inputs)
-  const [partName, setPartName] = useState('');
-  const [cost, setCost] = useState('');
-  const [kmAtInstall, setKmAtInstall] = useState('');
+  const [partName, setPartName] = useState("");
+  const [cost, setCost] = useState("");
+  const [kmAtInstall, setKmAtInstall] = useState("");
 
   const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault(); // prevents page reload
 
     // Very basic validation
     if (!partName.trim() || !cost || !kmAtInstall) {
-      alert('Please fill in all fields');
+      alert("Please fill in all fields");
       return;
     }
 
@@ -25,7 +25,7 @@ export default function AddRepairForm() {
     const kmNum = parseInt(kmAtInstall, 10);
 
     if (isNaN(costNum) || isNaN(kmNum) || costNum <= 0 || kmNum < 0) {
-      alert('Please enter valid positive numbers for cost and kilometers');
+      alert("Please enter valid positive numbers for cost and kilometers");
       return;
     }
 
@@ -37,9 +37,9 @@ export default function AddRepairForm() {
     });
 
     // Reset form
-    setPartName('');
-    setCost('');
-    setKmAtInstall('');
+    setPartName("");
+    setCost("");
+    setKmAtInstall("");
   };
 
   return (
